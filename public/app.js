@@ -84,4 +84,35 @@ document.addEventListener('DOMContentLoaded', () => {
     a.click();
     URL.revokeObjectURL(url);
   });
+
+  document.getElementById('get-recommendation').addEventListener('click', async () => {
+    const profile = getProfile();
+    const output  = document.getElementById('recommendation-output');
+    const btn     = document.getElementById('get-recommendation');
+
+    output.style.display = 'block';
+
+    if (!profile) {
+      output.textContent = 'Please set up your profile first.';
+      return;
+    }
+
+    const recentLog = getLog().slice(-5);
+    btn.disabled = true;
+    output.textContent = 'FitBuddy is thinking…';
+
+    try {
+      const res  = await fetch('/api/recommend', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ profile, recentLog })
+      });
+      const data = await res.json();
+      output.textContent = data.recommendation ?? data.error ?? 'No response received.';
+    } catch {
+      output.textContent = 'Something went wrong. Please try again.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
 });
