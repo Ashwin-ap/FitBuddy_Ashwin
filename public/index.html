@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBuddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>FitBuddy</h1>
+    <nav>
+      <button class="nav-btn active" data-target="profile">Profile</button>
+      <button class="nav-btn" data-target="log">Log Activity</button>
+      <button class="nav-btn" data-target="progress">My Progress</button>
+      <button class="nav-btn" data-target="fitbuddy">FitBuddy</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="profile" class="active">
+      <h2>Your Profile</h2>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="10" max="120" required />
+        </div>
+        <div class="form-group">
+          <label for="goal">Fitness Goal</label>
+          <select id="goal" name="goal" required>
+            <option value="" disabled selected>Select a goal</option>
+            <option value="weight-loss">Lose Weight</option>
+            <option value="muscle-gain">Build Muscle</option>
+            <option value="general-fitness">Stay Active / General Fitness</option>
+            <option value="endurance">Improve Endurance</option>
+            <option value="flexibility">Improve Flexibility</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Save Profile</button>
+      </form>
+    </section>
+
+    <section id="log">
+      <h2>Log an Activity</h2>
+      <form id="log-form">
+        <div class="form-group">
+          <label for="activity">What did you do?</label>
+          <input type="text" id="activity" name="activity" placeholder="e.g. 30 min run, weights, yoga" required />
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration (minutes)</label>
+          <input type="number" id="duration" name="duration" min="1" required />
+        </div>
+        <div class="form-group">
+          <label for="effort">How did it feel?</label>
+          <select id="effort" name="effort" required>
+            <option value="" disabled selected>Select effort level</option>
+            <option value="easy">Easy — could have done more</option>
+            <option value="moderate">Moderate — challenging but manageable</option>
+            <option value="hard">Hard — pushed to my limit</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Log Activity</button>
+      </form>
+    </section>
+
+    <section id="progress">
+      <h2>My Progress</h2>
+      <p id="progress-empty">No activities logged yet.</p>
+      <ul id="progress-list"></ul>
+    </section>
+
+    <section id="fitbuddy">
+      <h2>FitBuddy</h2>
+      <p>Get personalised fitness recommendations powered by AI.</p>
+      <button id="get-recommendation" class="btn-primary">Get Recommendation</button>
+      <div id="recommendation-output"></div>
+      <p class="disclaimer">FitBuddy is an AI assistant, not a medical professional.</p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
