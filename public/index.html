@@ -22,6 +22,15 @@
 
     <section id="profile" class="active">
       <h2>Your Profile</h2>
+
+      <div id="user-picker" style="display:none">
+        <p class="picker-label">Who's using FitBuddy today?</p>
+        <div id="user-list"></div>
+        <button type="button" id="new-user-btn" class="btn-secondary">+ New User</button>
+      </div>
+
+      <button type="button" id="switch-user-btn" class="btn-secondary" style="display:none">← Back to Users</button>
+
       <form id="profile-form">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -69,6 +78,7 @@
         <button type="submit" class="btn-primary">Log Activity</button>
       </form>
       <p id="log-confirm" class="log-confirm" style="display:none;">Activity logged!</p>
+      <p id="log-hint" class="section-hint"></p>
     </section>
 
     <section id="progress">
@@ -81,6 +91,7 @@
     <section id="fitbuddy">
       <h2>FitBuddy</h2>
       <p>Get personalised fitness recommendations powered by AI.</p>
+      <p id="fitbuddy-hint" class="section-hint"></p>
       <button id="get-recommendation" class="btn-primary">Get Recommendation</button>
       <div id="recommendation-output"></div>
       <p class="disclaimer">FitBuddy is an AI assistant, not a medical professional.</p>
