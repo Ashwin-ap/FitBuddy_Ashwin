@@ -130,6 +130,16 @@ Title:     <feature_title>
 Then tell the user:
 
 "Review the spec at `.claude/specs/spec-<session_number>-<feature_slug>.md`
-then enter Plan Mode with Shift+Tab twice to begin implementation."
+then enter Plan Mode with Shift+Tab twice to begin implementation.
+
+When the session is complete and you have reviewed the changes, push and clean up manually:
+
+  git push origin <branch_name>
+  git checkout main
+  git merge <branch_name>
+  git push origin main
+  git branch -d <branch_name>
+
+This skill does not push or delete branches."
 
 Do not print the full spec in chat unless explicitly asked.

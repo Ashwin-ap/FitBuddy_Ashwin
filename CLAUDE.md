@@ -87,6 +87,24 @@ git commit -m "Initial project setup"
 
 `/create-spec` will fail at Step 1 if this has not been done.
 
+## Git Workflow per Session
+
+`/create-spec` only creates the feature branch locally. It does **not** push or merge anything.
+
+After each session, once you have reviewed the implementation:
+
+```bash
+git add .
+git commit -m "Session N: <feature title>"
+git push origin <branch_name>   # push the feature branch
+git checkout main
+git merge <branch_name>
+git push origin main
+git branch -d <branch_name>     # delete local feature branch
+```
+
+Do this manually — the skill will never push or delete branches on your behalf.
+
 ---
 
 ## Running the App
