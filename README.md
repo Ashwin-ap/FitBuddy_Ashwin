@@ -191,6 +191,6 @@ This is always visible in the FitBuddy panel.
 - Your API key is never exposed to the browser — all AI calls are proxied through the local Express server
 - Clearing your browser's site data will erase all profiles and logs — use **Export My Data** to back up first
 
----
+
 
 
