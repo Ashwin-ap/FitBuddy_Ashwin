@@ -193,7 +193,4 @@ This is always visible in the FitBuddy panel.
 
 ---
 
-## Built for
 
-FDE Academy — Vibe Coding Lab, Week 1  
-Student: Ashwin Pillai
